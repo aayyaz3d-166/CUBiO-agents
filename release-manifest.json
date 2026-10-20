@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "name": "@cubio/mcp-server",
+  "version": "1.1.0",
+  "releaseName": "CUBiO Sovereign Multi-Agent MCP Server — Standalone Production MVP v1.1",
+  "stage": "STAGE 4 — Standalone MCP MVP v1.1",
+  "releaseDate": "2026-10-20",
+  "authority": "@PMA (Project Manager Agent)",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cubio-ai/3d-memory-studio.git",
+    "directory": "packages/cubio-mcp"
+  },
+  "runtime": {
+    "engine": "node",
+    "minVersion": ">=20.0.0",
+    "moduleFormat": "esm",
+    "builtInModulesRequired": [
+      "node:sqlite",
+      "crypto",
+      "fs",
+      "path",
+      "child_process",
+      "perf_hooks"
+    ],
+    "externalDependencies": {
+      "@modelcontextprotocol/sdk": "^1.32.1"
+    }
+  },
+  "safetyInvariants": {
+    "IS_ACTUATION_BLOCKED": true,
+    "STRICT_STDIO_DISCIPLINE": true,
+    "PROTECTED_BASELINES_PRESERVED": true,
+    "UNIVERSAL_SECRET_REDACTION": true
+  },
+  "tools": {
+    "totalCount": 17,
+    "inventory": [
+      {
+        "name": "list_agents",
+        "category": "agent_discovery",
+        "tier": "STABLE"
+      },
+      {
+        "name": "get_agent_capabilities",
+        "category": "agent_discovery",
+        "tier": "STABLE"
+      },
+      {
+        "name": "orchestrate_tasks",
+        "category": "aoa_orchestration",
+        "tier": "STABLE"
+      },
+      {
+        "name": "discover_skills",
+        "category": "skills_framework",
+        "tier": "STABLE"
+      },
+      {
+        "name": "execute_skill",
+        "category": "skills_framework",
+        "tier": "STABLE"
+      },
+      {
+        "name": "submit_task",
+        "category": "pma_pipeline",
+        "tier": "STABLE"
+      },
+      {
+        "name": "get_task_status",
+        "category": "pma_pipeline",
+        "tier": "STABLE"
+      },
+      {
+        "name": "execute_task",
+        "category": "pma_pipeline",
+        "tier": "STABLE"
+      },
+      {
+        "name": "onboard_workspace",
+        "category": "workspace_management",
+        "tier": "STABLE"
+      },
+      {
+        "name": "inspect_workspace",
+        "category": "workspace_management",
+        "tier": "STABLE"
+      },
+      {
+        "name": "select_workspace",
+        "category": "workspace_management",
+        "tier": "STABLE"
+      },
+      {
+        "name": "list_workspaces",
+        "category": "workspace_management",
+        "tier": "STABLE"
+      },
+      {
+        "name": "authorize_workspace",
+        "category": "workspace_security",
+        "tier": "STABLE"
+      },
+      {
+        "name": "verify_path_containment",
+        "category": "workspace_security",
+        "tier": "STABLE"
+      },
+      {
+        "name": "request_write_approval",
+        "category": "workspace_security",
+        "tier": "STABLE"
+      },
+      {
+        "name": "confirm_write_approval",
+        "category": "workspace_security",
+        "tier": "STABLE"
+      },
+      {
+        "name": "write_workspace_file",
+        "category": "workspace_security",
+        "tier": "STABLE"
+      }
+    ]
+  },
+  "distributionPolicy": {
+    "publishAllowed": false,
+    "requireExplicitAuthorization": true,
+    "dryRunPassed": true,
+    "filesWhitelist": [
+      "dist",
+      "bin",
+      "README.md",
+      "LICENSE",
+      "CHANGELOG.md",
+      "VERSIONING.md",
+      "INSTALLATION.md",
+      "release-manifest.json"
+    ],
+    "prohibitedArtifactsBlacklist": [
+      "*.db",
+      "*.3dmemory",
+      "*.sqlite",
+      "*.env",
+      "*.env.*",
+      "data/**",
+      "training/**",
+      "tmp/**",
+      "scratch/**",
+      ".git/**"
+    ]
+  },
+  "checksums": {
+    "dist/index.js": "7EAAE723BE01DA9C316BAFB446CA2B63E6D7FD48A2CE9DCEA546CF7D10C8D7E7",
+    "bin/cubio-mcp.js": "54A052AA27E167AA35C5CA6A0E6A737E48FC6F1735D270BF3BBE41256FBFC793",
+    "cubio-mcp-server-1.1.0.tgz": "E6106F5D697DB0F392B6A346066B13DD8C32637574BCFF7E4CBBC664AC15EF71"
+  },
+  "acceptanceEvidence": {
+    "task4_1_packaging_tests": "8/8 Passed (100%)",
+    "task4_2_onboarding_tests": "10/10 Passed (100%)",
+    "task4_3_security_tests": "11/11 Passed (100%)",
+    "task4_5_release_gate_tests": "10/10 Passed (100%)",
+    "totalPassingTests": 39,
+    "totalFailingTests": 0
+  }
+}

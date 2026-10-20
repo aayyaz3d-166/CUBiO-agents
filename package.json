@@ -1,0 +1,59 @@
+{
+  "name": "@cubio/mcp-server",
+  "version": "1.1.0",
+  "description": "CUBiO Sovereign Multi-Agent Model Context Protocol (MCP) Server",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": {
+    "cubio-mcp": "bin/cubio-mcp.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md",
+    "VERSIONING.md",
+    "INSTALLATION.md",
+    "release-manifest.json"
+  ],
+  "scripts": {
+    "build": "node build.mjs",
+    "start": "node bin/cubio-mcp.js",
+    "typecheck": "tsc --noEmit",
+    "pack": "npm pack",
+    "dry-run": "npm publish --dry-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cubio-ai/3d-memory-studio.git",
+    "directory": "packages/cubio-mcp"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "cubio",
+    "multi-agent",
+    "pma",
+    "aoa",
+    "ai-agents",
+    "sovereign-ai"
+  ],
+  "author": "CUBiO AI Engineering Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "esbuild": "^0.25.0",
+    "typescript": "~5.8.2"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
